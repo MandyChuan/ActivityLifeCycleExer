@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
-
+    public static final String BOOK_NAME_OF_CATEGORY_PHYSICAL = "bookNameOfCategoryPhysical";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 //                startActivity(intent);
 //               Toast.makeText(MainActivity.this, "Button被点击了！", Toast.LENGTH_SHORT).show();
                 Intent intent  = new Intent(MainActivity.this,ActivitySecond.class);
-                intent.putExtra("name",editText.getText().toString());
+                intent.putExtra(BOOK_NAME_OF_CATEGORY_PHYSICAL,editText.getText().toString());
                 startActivity(intent);
             }
         });
