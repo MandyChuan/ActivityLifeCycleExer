@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate: 执行了");
         Button button = (Button) findViewById(R.id.activity_main_button);
+        final EditText editText = (EditText) findViewById(R.id.activity_main_edit_text);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 //                startActivity(intent);
 //               Toast.makeText(MainActivity.this, "Button被点击了！", Toast.LENGTH_SHORT).show();
                 Intent intent  = new Intent(MainActivity.this,ActivitySecond.class);
-                intent.putExtra("name","林宝川");
+                intent.putExtra("name",editText.getText().toString());
                 startActivity(intent);
             }
         });
