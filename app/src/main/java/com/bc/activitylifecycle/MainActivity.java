@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +21,11 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,ActivitySecond.class);
+//                Intent intent = new Intent(MainActivity.this,ActivitySecond.class);
+//                startActivity(intent);
+//               Toast.makeText(MainActivity.this, "Button被点击了！", Toast.LENGTH_SHORT).show();
+                Intent intent  = new Intent(MainActivity.this,ActivitySecond.class);
+                intent.putExtra("name","林宝川");
                 startActivity(intent);
             }
         });
@@ -54,5 +59,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.d(TAG, "onDestroy: 执行了");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG, "onRestart: 执行了");
     }
 }
