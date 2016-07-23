@@ -45,15 +45,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent,1);
             }
         });
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        String returnData = "";
+        switch (requestCode){
+            case 0:
+                returnData = data.getStringExtra("back");
+                break;
+            case 1:
+                returnData = data.getStringExtra("ThirdBack");
 
-        String returnData = data.getStringExtra("back");
+        }
         Toast.makeText(MainActivity.this, returnData, Toast.LENGTH_SHORT).show();
     }
 

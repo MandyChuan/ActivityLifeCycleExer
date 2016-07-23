@@ -8,7 +8,7 @@
         android:id="@+id/second_activity_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ceshi" />
+        android:text="测试" />
     <EditText
         android:id="@+id/second_activity_edit_view"
         android:layout_width="match_parent"
@@ -17,5 +17,5 @@
         android:id="@+id/second_activity_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="传回名字"/>
+        android:text="Send Back"/>
 </LinearLayout>
