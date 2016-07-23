@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     tools:context="com.bc.activitylifecycle.MainActivity">
 
     <Button
@@ -16,8 +16,14 @@
         />
     <EditText
         android:id="@+id/activity_main_edit_text"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:hint="What's your name?"/>
+    <Button
+        android:id="@+id/activity_main_third_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="启动第三个Activity"
+        android:textAllCaps="false"
+        />
 </LinearLayout>
