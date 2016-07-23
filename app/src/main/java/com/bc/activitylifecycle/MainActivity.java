@@ -7,31 +7,44 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     public static final String BOOK_NAME_OF_CATEGORY_PHYSICAL = "bookNameOfCategoryPhysical";
+    private Button mButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate: 执行了");
-        Button button = (Button) findViewById(R.id.activity_main_button);
+        mButton = (Button) findViewById(R.id.activity_main_button);
         final EditText editText = (EditText) findViewById(R.id.activity_main_edit_text);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                Intent intent = new Intent(MainActivity.this,ActivitySecond.class);
 //                startActivity(intent);
 //               Toast.makeText(MainActivity.this, "Button被点击了！", Toast.LENGTH_SHORT).show();
-                Intent intent  = new Intent(MainActivity.this,ActivitySecond.class);
+//                Intent intent  = new Intent(MainActivity.this,ActivitySecond.class);
+//                intent.putExtra(BOOK_NAME_OF_CATEGORY_PHYSICAL,editText.getText().toString());
+//                startActivity(intent);
+
+                Intent intent = new Intent(MainActivity.this, ActivitySecond.class);
                 intent.putExtra(BOOK_NAME_OF_CATEGORY_PHYSICAL,editText.getText().toString());
-                startActivity(intent);
+                startActivityForResult(intent,0);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        String returnData = data.getStringExtra("back");
+        Toast.makeText(MainActivity.this, returnData, Toast.LENGTH_SHORT).show();
     }
 
     @Override
