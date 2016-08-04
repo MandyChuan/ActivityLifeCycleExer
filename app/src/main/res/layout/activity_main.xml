@@ -11,19 +11,7 @@
         android:id="@+id/activity_main_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="启动第二个Activity"
-        android:textAllCaps="false"
-        />
-    <EditText
-        android:id="@+id/activity_main_edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="What's your name?"/>
-    <Button
-        android:id="@+id/activity_main_third_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="启动第三个Activity"
+        android:text="测试生命周期按钮"
         android:textAllCaps="false"
         />
 </LinearLayout>
